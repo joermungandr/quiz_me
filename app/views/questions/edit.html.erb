@@ -1,0 +1,23 @@
+<h1>Editing question</h1>
+
+<%= form_for(@question) do |f| %>
+        <div>
+          <%= f.label :description, ("Aufgabentext") %><br>
+          <%= f.text_area  :description  %>
+        </div>
+        <div>
+          <%= f.label :help, ("Lösungshilfe") %><br>
+          <%= f.text_area  :help  %>
+        </div>
+        <div>             
+          <%= f.label :answers, ("Antworten auswählen") %><br>
+          <%= f.collection_select(:answers, Answer.all, :id, :description,{:include_hidden => false},{:multiple => true}) %>
+        </div>
+        <br>
+        <div>
+          <%= f.submit "Frage bearbeiten", class: "btn btn-large btn-primary" %>
+        </div>
+ <% end %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>

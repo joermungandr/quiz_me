@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<li>Quiz: <br><%= @quiz.name %></li>
+<li> Zugewiesene Fragen: <br>
+<% @quiz.questions.each do |question| %>
+  <i><%= question.description %> <br></i>
+<%end%><br></li>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :answers
+  resources :questions
+  resources :quizzes
 
   root 'static_pages#home'
   match '/signin',  to: 'sessions#new',         via: 'get'

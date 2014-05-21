@@ -1,0 +1,18 @@
+<h1>Editing answer</h1>
+
+<%= form_for(@answer) do |f| %>
+        <div>
+          <%= f.label :description, ("Beschreibung") %><br>
+          <%= f.text_area  :description  %>
+        </div>
+        <div>
+          <%= f.label :right_answer, ("Richtige Anwort?: ") %><%= f.check_box :right_answer %> 
+        </div>
+        <br>
+        <div>
+          <%= f.submit "Antwort bearbeiten", class: "btn btn-large btn-primary" %>
+        </div>
+ <% end %>
+
+<%= link_to 'Show', @answer %> |
+<%= link_to 'Back', answers_path %>
