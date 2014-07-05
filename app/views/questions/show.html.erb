@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<li>Frage: <br><%= @question.description %></li>
-<li>Hilfe: <br><%= @question.help %></li>
-<li> Zugewiesene Lösungen: <br>
+Question: <%= @question.description %><br>
+Hint: <%= @question.help %><br><br>
+Possible answers: <br>
 <% @question.answers.each do |answer| %>
   <i><%= answer.description %> <br></i>
-<%end%><br></li>
+<%end%><br>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

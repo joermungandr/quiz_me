@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<li> <%= @answer.description %> </li>
-<li> <%= @answer.right_answer %></li>
+Answer: <%= @answer.description %><br>
+<% if @answer.right_answer %>
+This answer is true :-)
+<% else %>
+This answer is false :-(<br>
+<% end %>
+Feddback: <%= @answer.feedback %><br>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |
 <%= link_to 'Back', answers_path %>

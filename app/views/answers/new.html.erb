@@ -8,6 +8,10 @@
         <div>
           <%= f.label :right_answer, ("Richtige Anwort?: ") %><%= f.check_box :right_answer %> 
         </div>
+        <div>
+          <%= f.label :feedback, ("Feedback?: ") %><br>
+          <%= f.text_area  :feedback  %>
+        </div>
         <br>
         <div>
           <%= f.submit "Antwort anlegen", class: "btn btn-large btn-primary" %>
